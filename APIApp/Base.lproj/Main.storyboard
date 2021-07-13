@@ -92,6 +92,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cBB-8I-dvj"/>
+                    <connections>
+                        <outlet property="tableView" destination="fqF-dK-3cU" id="gOm-NY-cbo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToK-Ob-Irw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
