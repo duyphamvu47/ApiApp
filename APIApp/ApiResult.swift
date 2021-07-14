@@ -7,7 +7,7 @@
 
 import Foundation
 struct ApiResult: Codable{
-    let countryID:String?
+    let country_id:String?
     let region:String?
     let event_clarity:String?
     let date_prec:String?
@@ -15,8 +15,8 @@ struct ApiResult: Codable{
     let date_end:String?
     let deaths_a:String?
     let deaths_b: String?
-    let deaths_civillians:String?
-    let deaths_unknow: String?
+    let deaths_civilians:String?
+    let deaths_unknown: String?
     let low: String?
     let best: String?
     let high: String?
@@ -25,9 +25,9 @@ struct ApiResult: Codable{
     let id: String?
     let year: String?
     let active_year: String?
-    let typeOfViolence: String?
-    let confictViewID: String?
-    let conflictName: String?
+    let type_of_violence: String?
+    let conflict_new_id: String?
+    let conflict_name: String?
     let dyad_new_id: String?
     let dyad_name: String?
     let side_a_new_id: String?
@@ -36,19 +36,19 @@ struct ApiResult: Codable{
     let side_b_new_id: String?
     let gwnob: String?
     let side_b: String?
-    let numberOfSource: String?
-    let sourceArticle: String?
-    let sourceOffice: String?
-    let sourceDate: String?
-    let sourceHealine: String?
-    let sourceOriginal: String?
+    let number_of_sources: String?
+    let source_article: String?
+    let source_office: String?
+    let source_date: String?
+    let source_headline: String?
+    let source_original: String?
     let where_prec: String?
-    let where_coordinate: String?
+    let where_coordinates: String?
     let adm_1: String?
     let adm_2: String?
     let latitude: String?
-    let longtitude: String?
+    let longitude: String?
     let geom_wkt: String?
-    let priofrid_gid: String?
+    let priogrid_gid: String?
     let country: String?
 }

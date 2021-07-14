@@ -45,8 +45,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if !data.isEmpty{
-            cell.textLabel?.text = "Country: \(data[indexPath.row].country)"
-            cell.detailTextLabel?.text = "(\(data[indexPath.row].latitude), \(data[indexPath.row].longtitude))"
+            cell.textLabel?.text = "\(data[indexPath.row].source_article!)"
+            cell.detailTextLabel?.text = "\(data[indexPath.row].country!) (\(data[indexPath.row].latitude!), \(data[indexPath.row].longitude!))"
         }
         return cell
     }
