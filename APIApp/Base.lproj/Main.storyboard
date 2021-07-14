@@ -30,7 +30,7 @@
         <scene sceneID="Fw5-15-EuS">
             <objects>
                 <navigationController id="Zo0-JZ-Dg2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" id="b4q-6K-yBq"/>
+                    <tabBarItem key="tabBarItem" title="List" selectedImage="list.bullet.rectangle" catalog="system" id="b4q-6K-yBq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FYR-X9-R9D">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -56,21 +56,21 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="m66-0b-kG2" detailTextLabel="1mq-7M-n2e" style="IBUITableViewCellStyleSubtitle" id="dGX-Ae-7Ne">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="66.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dGX-Ae-7Ne" id="SAP-Fe-moY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m66-0b-kG2">
-                                                    <rect key="frame" x="20" y="1" width="39" height="24"/>
+                                                    <rect key="frame" x="20" y="10.5" width="39" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1mq-7M-n2e">
-                                                    <rect key="frame" x="20" y="25" width="53" height="18"/>
+                                                    <rect key="frame" x="20" y="37" width="53" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -91,7 +91,7 @@
                             <constraint firstItem="fqF-dK-3cU" firstAttribute="leading" secondItem="9Lq-bi-a4N" secondAttribute="leading" id="hps-6I-fTA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cBB-8I-dvj"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="cBB-8I-dvj"/>
                     <connections>
                         <outlet property="tableView" destination="fqF-dK-3cU" id="gOm-NY-cbo"/>
                     </connections>
@@ -104,8 +104,8 @@
         <scene sceneID="Ib9-9Q-iaY">
             <objects>
                 <navigationController id="EF0-iE-pVm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="CHh-A5-8ly"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gya-GT-BMS">
+                    <tabBarItem key="tabBarItem" title="Map" selectedImage="mappin" catalog="system" id="CHh-A5-8ly"/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="gya-GT-BMS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -117,17 +117,31 @@
             </objects>
             <point key="canvasLocation" x="83" y="516"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="oaI-9d-TIw">
             <objects>
-                <viewController id="FlW-1M-dJ2" sceneMemberID="viewController">
+                <viewController id="FlW-1M-dJ2" customClass="MapViewController" customModule="APIApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0CZ-II-MrS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SzO-8v-5ZU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qVr-YI-Zyr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SzO-8v-5ZU" firstAttribute="top" secondItem="qVr-YI-Zyr" secondAttribute="top" id="NRG-fA-HEv"/>
+                            <constraint firstItem="SzO-8v-5ZU" firstAttribute="leading" secondItem="qVr-YI-Zyr" secondAttribute="leading" id="XcZ-nN-mJS"/>
+                            <constraint firstItem="qVr-YI-Zyr" firstAttribute="bottom" secondItem="SzO-8v-5ZU" secondAttribute="bottom" id="ZdK-s4-1ch"/>
+                            <constraint firstItem="qVr-YI-Zyr" firstAttribute="trailing" secondItem="SzO-8v-5ZU" secondAttribute="trailing" id="jwK-FL-5od"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BeR-E0-gtF"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="BeR-E0-gtF"/>
+                    <connections>
+                        <outlet property="mapView" destination="SzO-8v-5ZU" id="Stz-KD-H1e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qok-g6-P3r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,6 +149,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="mappin" catalog="system" width="105" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

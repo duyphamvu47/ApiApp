@@ -26,6 +26,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        title = "Events"
         
         spinner.frame = CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 70)
         tableView.tableFooterView = spinner
@@ -51,6 +52,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Coordinate.shareInstance.latitude = Float(data[indexPath.row].latitude!)!
+        Coordinate.shareInstance.longitude = Float(data[indexPath.row].longitude!)!
+        tabBarController?.selectedIndex = 1
+    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastElement = data.count - 1
         
@@ -81,5 +87,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             spinner.stopAnimating()
         })
     }
-
 }
+
+

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A70D48D269E7E16003C6A1A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A70D48C269E7E16003C6A1A /* MapViewController.swift */; };
+		1A70D48F269E86B2003C6A1A /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A70D48E269E86B2003C6A1A /* Coordinate.swift */; };
 		1A9C0C32269D7DA300840678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9C0C31269D7DA300840678 /* AppDelegate.swift */; };
 		1A9C0C34269D7DA300840678 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9C0C33269D7DA300840678 /* SceneDelegate.swift */; };
 		1A9C0C36269D7DA300840678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9C0C35269D7DA300840678 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A70D48C269E7E16003C6A1A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1A70D48E269E86B2003C6A1A /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		1A9C0C2E269D7DA300840678 /* APIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9C0C31269D7DA300840678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A9C0C33269D7DA300840678 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				1A9C0C45269D800100840678 /* TableViewController.swift */,
 				1A9C0C47269D82CC00840678 /* ApiResult.swift */,
 				1A9C0C49269D86E600840678 /* APIHelper.swift */,
+				1A70D48C269E7E16003C6A1A /* MapViewController.swift */,
+				1A70D48E269E86B2003C6A1A /* Coordinate.swift */,
 			);
 			path = APIApp;
 			sourceTree = "<group>";
@@ -149,9 +155,11 @@
 				1A9C0C4A269D86E600840678 /* APIHelper.swift in Sources */,
 				1A9C0C36269D7DA300840678 /* ViewController.swift in Sources */,
 				1A9C0C32269D7DA300840678 /* AppDelegate.swift in Sources */,
+				1A70D48F269E86B2003C6A1A /* Coordinate.swift in Sources */,
 				1A9C0C48269D82CC00840678 /* ApiResult.swift in Sources */,
 				1A9C0C34269D7DA300840678 /* SceneDelegate.swift in Sources */,
 				1A9C0C46269D800100840678 /* TableViewController.swift in Sources */,
+				1A70D48D269E7E16003C6A1A /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
