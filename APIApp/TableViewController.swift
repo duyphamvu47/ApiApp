@@ -27,6 +27,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         title = "Events"
+        tabBarItem.image = UIImage(systemName: "list.bullet.rectangle")
         
         spinner.frame = CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 70)
         tableView.tableFooterView = spinner

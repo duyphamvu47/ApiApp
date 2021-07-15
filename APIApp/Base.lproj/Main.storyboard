@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="tAY-k4-1pI">
             <objects>
-                <tabBarController id="Wh5-wW-0Td" sceneMemberID="viewController">
+                <tabBarController id="Wh5-wW-0Td" customClass="TabBarController" customModule="APIApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U1l-QJ-F6Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
