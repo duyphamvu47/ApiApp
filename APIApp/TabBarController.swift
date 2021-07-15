@@ -18,7 +18,9 @@ class TabBarController: UITabBarController {
 
 
         item1.image = UIImage(systemName: "list.bullet.rectangle")!.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        item1.title = "Events"
         item2.image = UIImage(systemName: "mappin")!.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        item2.title = "Map"
     }
 
 }
