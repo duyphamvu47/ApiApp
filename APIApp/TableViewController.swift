@@ -26,7 +26,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
+        //Set up loading indicator
         spinner.frame = CGRect(x: 0.0, y: 0.0, width: tableView.bounds.width, height: 70)
         tableView.tableFooterView = spinner
         tableView.tableFooterView?.isHidden = false
@@ -55,11 +55,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         Coordinate.shareInstance.latitude = Float(data[indexPath.row].latitude!)!
         Coordinate.shareInstance.longitude = Float(data[indexPath.row].longitude!)!
         tabBarController?.selectedIndex = 1
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastElement = data.count - 1
         
-        // reaching last element
+        // reaching last element, data is not currently loading
         if !loadingData && indexPath.row == lastElement && !noMoreData{
             loadingData = true
             // run loading indicator
@@ -71,7 +72,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func loadDataUsingAPI(){
         APIHelper.getData(limit: limit, offset: currentIndex, completion: { [self] result in
-            // loading final object from API
+            // loading the last object from API
             if(result.count < limit){
                 noMoreData = true
                 currentIndex += result.count
@@ -82,6 +83,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             data.append(contentsOf: result)
             tableView.reloadData()
             loadingData = false
+            
+            //Change spinner state
             tableView.tableFooterView?.isHidden = true
             spinner.stopAnimating()
         })
