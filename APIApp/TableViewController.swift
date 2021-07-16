@@ -52,8 +52,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Coordinate.shareInstance.latitude = Float(data[indexPath.row].latitude!)!
-        Coordinate.shareInstance.longitude = Float(data[indexPath.row].longitude!)!
+        let latitude = Float(data[indexPath.row].latitude!)
+        let longitude = Float(data[indexPath.row].longitude!)
+        if latitude != nil && longitude != nil{
+            Coordinate.shareInstance.selectedCoordinate = (latitude!, longitude!, true)
+        }
         tabBarController?.selectedIndex = 1
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -81,6 +84,10 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
             
             data.append(contentsOf: result)
+            // Update
+            if Coordinate.shareInstance.lastIndex < currentIndex{
+                transferData(startIndex: Coordinate.shareInstance.lastIndex)
+            }
             tableView.reloadData()
             loadingData = false
             
@@ -88,6 +95,25 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             tableView.tableFooterView?.isHidden = true
             spinner.stopAnimating()
         })
+    }
+    
+    
+    func transferData(startIndex: Int){
+        var dataToTransfer:[(latitude: Float, longitude: Float)] = []
+        
+        //Create a new array of missing object
+        for index in startIndex...data.count - 1{
+            let latitude = Float(data[index].latitude!)
+            let longitude = Float(data[index].longitude!)
+            
+            if latitude != nil && longitude != nil{
+                dataToTransfer.append((latitude!, longitude!))
+            }
+        }
+        
+        // Merge array and update
+        Coordinate.shareInstance.cordinates.append(contentsOf: dataToTransfer)
+        Coordinate.shareInstance.lastIndex = currentIndex
     }
 }
 

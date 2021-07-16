@@ -9,6 +9,7 @@ import Foundation
 
 class Coordinate {
     static let shareInstance = Coordinate()
-    var latitude = Float()
-    var longitude = Float()
+    var cordinates:[(latitude: Float, longitude: Float)] = []
+    var selectedCoordinate: (latitude: Float, longitude: Float, isSelected: Bool) = (0, 0, false)
+    var lastIndex:Int = 0;
 }
